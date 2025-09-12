@@ -48,5 +48,17 @@ class AuthNotifier extends StateNotifier<AppAuthState> {
     }
   }
 
-  // We'll add signInWithGoogle later
+  Future<void> signInWithGoogle() async {
+    state = state.copyWith(googleLoading: true);
+    try {
+      await _authRepository.signInWithGoogle();
+      AppSnackbar.success('Login successful');
+    } on AuthException catch (e) {
+      AppSnackbar.error(e.message);
+    } catch (e) {
+      AppSnackbar.error(e.toString());
+    } finally {
+      state = state.copyWith(googleLoading: false);
+    }
+  }
 }

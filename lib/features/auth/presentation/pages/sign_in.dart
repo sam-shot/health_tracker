@@ -44,6 +44,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     final authNotifier = ref.read(authNotifierProvider.notifier);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -125,9 +126,10 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                 ),
                 const Gap(40),
                 AppButton(
-                  onPressed: () {},
+                  onPressed: authNotifier.signInWithGoogle,
                   buttonText: 'Continue with Google',
                   buttonType: ButtonType.outlined,
+                  isLoading: authState.googleLoading,
                   image: Assets.images.google.image(
                     width: 25,
                   ),

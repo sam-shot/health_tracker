@@ -1,3 +1,4 @@
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:health_tracker/core/services/database_service.dart';
 import 'package:health_tracker/features/auth/repo/auth_repo.dart';
 import 'package:injectable/injectable.dart';
@@ -32,16 +33,28 @@ class AuthRepositoryImpl implements AuthRepository {
         password: password,
       );
     } catch (e) {
-      // You can handle specific Supabase exceptions here for better UX
       rethrow;
     }
   }
 
   @override
   Future<void> signInWithGoogle() async {
-    // This will be implemented in the next phase after UI is ready
-    // as it requires platform-specific setup.
-    throw UnimplementedError();
+    try {
+      final GoogleSignIn signIn = GoogleSignIn.instance;
+      signIn.initialize(
+        serverClientId:
+            '407002125531-75fnukledsfnsbjesabebqqqrmmbqd94.apps.googleusercontent.com',
+      );
+      final GoogleSignInAccount googleUser = await signIn.authenticate();
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
+
+      await _supabaseClient.auth.signInWithIdToken(
+        provider: OAuthProvider.google,
+        idToken: googleAuth.idToken ?? '',
+      );
+    } catch (e) {
+      rethrow;
+    }
   }
 
   @override

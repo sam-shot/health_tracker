@@ -40,10 +40,11 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    final authProvider = ref.watch(authNotifierProvider);
+    final authState = ref.watch(authNotifierProvider);
     final authNotifier = ref.read(authNotifierProvider.notifier);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -96,7 +97,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                     }
                   },
                   buttonText: 'Sign Up',
-                  isLoading: authProvider.loading,
+                  isLoading: authState.loading,
                 ),
                 const Gap(16),
                 AppButton(
@@ -125,9 +126,10 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 ),
                 const Gap(40),
                 AppButton(
-                  onPressed: () {},
+                  onPressed: authNotifier.signInWithGoogle,
                   buttonText: 'Continue with Google',
                   buttonType: ButtonType.outlined,
+                  isLoading: authState.googleLoading,
                   image: Assets.images.google.image(
                     width: 25,
                   ),

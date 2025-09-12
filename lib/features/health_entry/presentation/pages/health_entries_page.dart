@@ -69,7 +69,7 @@ class _HealthEntriesPageState extends ConsumerState<HealthEntriesPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Hey There!', style: context.bodyMedium),
-                      Text('Good Morning', style: context.displaySmall),
+                      Text(_getGreeting(), style: context.displaySmall),
                     ],
                   ),
                 ],
@@ -128,5 +128,16 @@ class _HealthEntriesPageState extends ConsumerState<HealthEntriesPage> {
         ),
       ),
     );
+  }
+
+  String _getGreeting() {
+    final hour = DateTime.now().hour;
+    if (hour < 12) {
+      return 'Good Morning 🌅';
+    } else if (hour < 17) {
+      return 'Good Afternoon ☀️';
+    } else {
+      return 'Good Evening 🌙';
+    }
   }
 }

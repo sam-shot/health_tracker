@@ -39,7 +39,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: _getOnPressed(),
-      height: 60,
+      height: 50,
       elevation: 0,
       highlightElevation: 0,
       hoverElevation: 0,
