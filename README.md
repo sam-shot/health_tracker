@@ -10,6 +10,55 @@ This project is a fully-featured health tracking application built with Flutter.
 
 ---
 
+## Try It Live
+
+Want to test the app without setting up the development environment? You can try it instantly in your browser or download the APK directly to your Android device.
+
+### 🌐 Live Browser Demo
+
+Experience the app directly in your browser using Appetize.io:
+
+**[👉 Try Health Tracker Live](https://appetize.io/app/android/com.example.health_tracker?device=pixel9xl&osVersion=15.0&toolbar=true&scale=100)**
+
+*No installation required - runs in your browser on any device*
+
+### 📱 Download APK
+
+Download the APK file directly to your Android device:
+
+**[📥 Download APK from Google Drive](https://drive.google.com/file/d/1MAUa0l8gctvRS3Y320nLwMgAMgPOVDqv/view?usp=sharing)**
+
+
+**Installation Instructions:**
+1. Download the APK file to your Android device
+2. Enable "Install from Unknown Sources" in your device settings
+3. Open the downloaded APK file to install
+
+
+
+## Screenshots
+
+Here's a visual walkthrough of the Health Tracker app:
+
+### Authentication Flow
+<img src="https://i.ibb.co/Z64VHrrj/2025-09-12-11-24-53-High-Res-Screenshot.png" width="300">
+
+### Home Screen & Entry Management
+<img src="https://i.ibb.co/XfK8pLFy/2025-09-12-11-25-15-High-Res-Screenshot.png" alt="Home screen displaying list of mood entries with sync status indicators" width="300">
+
+### Creating New Entries
+<img src="https://i.ibb.co/S7tFZY2j/2025-09-12-11-26-01-High-Res-Screenshot.png" alt="Create new health entry form with mood selection and optional notes" width="300">
+
+### User Profile
+<img src="https://i.ibb.co/60WmRj8N/2025-09-12-11-26-18-High-Res-Screenshot.png" alt="User profile page with avatar, email, and entry statistics" width="300">
+
+### Offline Functionality
+<img src="https://i.ibb.co/cczLYp9J/2025-09-12-11-27-09-High-Res-Screenshot.png" alt="App functioning offline with local data and sync indicators" width="300">
+
+*Note: To view the actual app interface, use the [live browser demo](https://appetize.io/app/android/com.example.health_tracker?device=pixel9xl&osVersion=15.0&toolbar=true&scale=100) or download the APK above.*
+
+
+
 ## Features Implemented
 
 - **Full Authentication:** Secure sign-up and sign-in with both email/password and third-party Google Sign-In.
