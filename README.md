@@ -61,6 +61,22 @@ Here's a visual walkthrough of the Health Tracker app:
 
 
 
+## 🎥 Video Walkthrough
+
+Watch a complete walkthrough of the Health Tracker app in action:
+
+**[📹 View App Demo Video](https://www.loom.com/share/9817ad55e61e4ba3884f842aa7f35fd6)**
+
+This video demonstrates:
+- Complete authentication flow with Google Sign-In
+- Creating and managing health entries
+- Offline functionality and sync indicators
+- Profile page with user statistics
+- Real-time UI updates and smooth animations
+
+*Duration: 6 mins*
+
+
 ## Features Implemented
 
 - **Full Authentication:** Secure sign-up and sign-in with both email/password and third-party Google Sign-In.

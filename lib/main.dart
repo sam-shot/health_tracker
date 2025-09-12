@@ -16,7 +16,6 @@ void main() async {
     databaseFactory = databaseFactoryFfi;
   }
 
-  // We'll leave this here, but we won't use it until later
   await Supabase.initialize(
     url: 'https://qzobqokwkgvopegkgukq.supabase.co',
     anonKey:
