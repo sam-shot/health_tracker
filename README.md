@@ -78,7 +78,7 @@ This project was built using a feature-first, clean architecture approach **(Dat
 
 - **Unit Tests:** I would write unit tests for the `HealthEntryNotifier` and `HealthEntryRepository`. Since we used constructor dependency injection, it's easy to provide mock repositories and data sources to verify that the business logic (like counting entries, handling sync states, and transforming data) works correctly in isolation.
 - **Widget Tests:** I would write widget tests for the `SignInPage`, `HealthEntriesPage`, and `CreateEntryPage`. The goal would be to verify that the UI correctly reflects different states from the Riverpod providers (e.g., showing a `CircularProgressIndicator` when the state is `loading`, displaying a list of entries when `loaded`, and showing an error message when `error`).
-- **Integration Tests:** I would write a full integration test for the "offline entry" use case using `flutter_test` and `integration_test`: 1. Turn off the network. 2. Create a new entry. 3. Verify it appears in the list with a "not synced" icon. 4. Turn the network back on. 5. Trigger a refresh and verify the "synced" icon appears.
+- **Integration Tests:** I would write a full integration test for the "offline entry" use case using `flutter_test` and `integration_test`: 1. Turn off the network. 2. Create a new entry. 3. Verify it appears in the list with a "not synced" icon. 4. Turn the network back on. 5. Trigger a refresh and verify the "not synced" icon disappears.
 
 ---
 
