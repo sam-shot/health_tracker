@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:health_tracker/core/extension/context.extensions.dart';
 import 'package:health_tracker/core/theme/app_colors.dart';
 
@@ -14,6 +15,10 @@ class AppTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final bool isDisabled;
   final int? maxLines;
+  final Iterable<String>? autofillHints;
+  final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
+  
   const AppTextField({
     required this.controller,
     this.hint,
@@ -26,6 +31,9 @@ class AppTextField extends StatefulWidget {
     this.onChanged,
     this.validator,
     this.maxLines,
+    this.autofillHints,
+    this.keyboardType,
+    this.inputFormatters,
     super.key,
   });
 
@@ -70,6 +78,9 @@ class _AppTextFieldState extends State<AppTextField> {
           validator: widget.validator,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscuringCharacter: '*',
+          autofillHints: widget.autofillHints,
+          keyboardType: widget.keyboardType,
+          inputFormatters: widget.inputFormatters,
           decoration: InputDecoration(
             hintText: widget.hint,
             contentPadding: const EdgeInsets.all(16),
