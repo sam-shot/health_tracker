@@ -1,16 +1,31 @@
-# health_tracker
+# Health Tracker Flutter Assessment
 
-A new Flutter project.
+This project is a simple health tracking feature built with Flutter. It allows users to add daily health entries (mood, title, notes), view them in a list, and persist them locally and sync with a backend.
 
-## Getting Started
+## Time Spent
 
-This project is a starting point for a Flutter application.
+- **Initial Setup & Architecture:** 
 
-A few resources to get you started if this is your first Flutter project:
+## Core Technologies & Choices
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This section explains the choices made for the main dependencies and architecture.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-   **State Management: Riverpod**
+    -   **Why:** Riverpod was chosen for its compile-safe and declarative approach to state management. It makes dependency injection simple and is highly flexible, allowing us to easily separate business logic from the UI. It avoids the boilerplate of `Provider` while offering powerful features like `FutureProvider` and `StreamProvider` that are perfect for handling asynchronous data from our backend.
+
+-   **Backend: Supabase**
+    -   **Why:** Supabase provides a powerful and easy-to-use backend-as-a-service. Its auto-generated APIs, real-time capabilities, and straightforward authentication make it ideal for rapidly developing features like this. The `supabase_flutter` package offers a clean and robust client library.
+
+-   **Local Storage: Hive**
+    -   **Why:** Hive is a lightweight and blazing-fast key-value database written in pure Dart. It's significantly faster than `sqflite` for simple CRUD operations, making it a perfect choice for our local persistence layer where performance for reading and writing entries is important.
+
+-   **Architecture: Clean Architecture**
+    -   **Why:** We are using a feature-driven clean architecture (Data > Domain > Presentation). This separates concerns, making the code more testable, maintainable, and scalable.
+
+-   **Dependency Injection: `get_it` & `injectable`**
+    -   **Why:** This combination provides a fast and efficient service locator pattern. `injectable` reduces boilerplate by using code generation to set up our dependency injection container.
+
+-   **Routing: `auto_route`**
+    -   **Why:** `auto_route` simplifies navigation by using code generation. It helps avoid boilerplate and reduces the risk of typos in route names, providing a type-safe way to pass arguments between screens.
+
+
