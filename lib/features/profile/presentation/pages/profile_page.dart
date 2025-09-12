@@ -72,18 +72,32 @@ class ProfilePage extends ConsumerWidget {
               const Gap(32),
               Row(
                 children: [
-                  StatCard(
-                    label: 'Total Entries',
-                    value: totalCount.toString(),
-                    icon: Icons.calendar_month,
-                    color: AppColors.primary,
+                  TweenAnimationBuilder<double>(
+                    tween: Tween<double>(begin: 0, end: totalCount.toDouble()),
+                    duration: const Duration(milliseconds: 600),
+                    builder: (context, value, child) {
+                      return StatCard(
+                        key: const ValueKey('total_entries'),
+                        label: 'Total Entries',
+                        value: value.toInt().toString(),
+                        icon: Icons.calendar_month,
+                        color: AppColors.primary,
+                      );
+                    },
                   ),
                   const Gap(16),
-                  StatCard(
-                    label: 'Today Entries',
-                    value: todayCount.toString(),
-                    icon: Icons.today,
-                    color: AppColors.moodHappy,
+                  TweenAnimationBuilder(
+                    tween: Tween<double>(begin: 0, end: todayCount.toDouble()),
+                    duration: const Duration(milliseconds: 500),
+                    builder: (context, value, child) {
+                      return StatCard(
+                        key: const ValueKey('today_entries'),
+                        label: 'Today Entries',
+                        value: value.toInt().toString(),
+                        icon: Icons.today,
+                        color: AppColors.moodHappy,
+                      );
+                    },
                   ),
                 ],
               ),

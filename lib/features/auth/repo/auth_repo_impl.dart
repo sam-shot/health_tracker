@@ -20,6 +20,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   String get avatarUrl =>
+      currentUser?.userMetadata?['avatar_url'] ??
       'https://api.dicebear.com/8.x/initials/png?seed=${currentUser?.email ?? 'default'}';
 
   @override
