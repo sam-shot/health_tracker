@@ -14,7 +14,7 @@ _$HealthEntryImpl _$$HealthEntryImplFromJson(Map<String, dynamic> json) =>
       createdAt: DateTime.parse(json['created_at'] as String),
       mood: $enumDecode(_$MoodEnumMap, json['mood']),
       isSynced: _$JsonConverterFromJson<int, bool>(
-              json['synced'], const BoolToIntConverter().fromJson,) ??
+              json['synced'], const BoolToIntConverter().fromJson) ??
           true,
       note: json['note'] as String?,
     );
@@ -27,7 +27,7 @@ Map<String, dynamic> _$$HealthEntryImplToJson(_$HealthEntryImpl instance) =>
       'created_at': instance.createdAt.toIso8601String(),
       'mood': _$MoodEnumMap[instance.mood]!,
       'synced': _$JsonConverterToJson<int, bool>(
-          instance.isSynced, const BoolToIntConverter().toJson,),
+          instance.isSynced, const BoolToIntConverter().toJson),
       'note': instance.note,
     };
 

@@ -123,7 +123,7 @@ class _CreateEntryPageState extends ConsumerState<CreateEntryPage> {
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       if (_selectedMood == null) {
-                        return AppSnackbar.warning('Select a mood to continue');
+                        AppSnackbar.warning('Select a mood to continue');
                       }
 
                       final response = await notifier.addEntry(

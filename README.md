@@ -8,6 +8,8 @@ This project is a fully-featured health tracking application built with Flutter.
 
 - **Total Time:** Approximately 10-12 hours
 
+I invested additional time beyond the 4-8 hour guideline to demonstrate a more complete picture of my skills in building a production-ready application. This included implementing a full authentication flow with **Google Sign-In**, creating a more robust **offline-first synchronization system**, and adding extra features like the **Profile Stats Page** and the **Dynamic Weekly Chart**.
+
 ---
 
 ## Try It Live
