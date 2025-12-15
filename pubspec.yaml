@@ -1,5 +1,5 @@
-name: health_tracker
-description: "A Health Tracker App"
+name: flutter_app_template
+description: "A Flutter App Template with Clean Architecture"
 publish_to: "none"
 version: 1.0.0+1
 
